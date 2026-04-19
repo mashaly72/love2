@@ -17,9 +17,9 @@ body {
   color: #222; 
   transition: background 0.3s; 
   display: flex;
-  flex-direction: column; /* ADD THIS */
+  flex-direction: column;
   justify-content: center;
-  align-items: center; /* CHANGE THIS */
+  align-items: center;
   min-height: 100vh;
   margin: 0;
   overflow-y: auto;
@@ -42,7 +42,6 @@ button {
 #feedback { font-size: 22px; margin-top: 20px; }
 canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 999; }
 
-/* Loader */
 .loader {
   border: 3px solid #eee;
   border-top: 3px solid #ff69b4;
@@ -56,7 +55,6 @@ canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-
   100% { transform: rotate(360deg); }
 }
 
-/* Cake */
 .cake {
   font-size: 60px;
   animation: bounce 1s infinite alternate;
@@ -67,7 +65,6 @@ canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-
   to { transform: translateY(-15px); }
 }
 
-/* Gallery */
 .gallery {
   margin-bottom: 25px;
 }
@@ -87,7 +84,6 @@ canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-
   color: #444;
 }
 
-/* Love letter */
 #message > div {
   background: white;
   padding: 25px;
@@ -118,7 +114,6 @@ canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-
 
 <div class="container hidden" id="message">
 
-<!-- 💖 GALLERY -->
 <div class="gallery">
 
   <div class="memory">
@@ -151,24 +146,23 @@ canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-
     <p>Look how creative you are tehehe 😭</p>
   </div>
 
-<div class="memory">
+  <div class="memory">
     <img src="pic7.jpg" class="memory-img">
     <p>Always writing your name everywhere, no matter what tehehe</p>
   </div>
 
-<div class="memory">
+  <div class="memory">
     <img src="pic10.jpg" class="memory-img">
     <p>Always stealing my hoodie tehehe (i have no problem with that dw 😭)</p>
   </div>
 
-<div class="memory">
+  <div class="memory">
     <img src="pic9.jpg" class="memory-img">
     <p>When you play piano, it makes me want to stay and listen 24/7</p>
   </div>
 
 </div>
 
-<!-- 💌 MESSAGE -->
 <div>
 <h2>HAPPY BIRTHDAYY MY NONAAA ❤️</h2>
 <p>
@@ -285,7 +279,6 @@ if (answer === q.correct) {
 document.getElementById('feedback').innerText = q.correctMsg;
 flash('lightgreen');
 
-// loader
 let loader = document.createElement('div');
 loader.className = 'loader';
 document.getElementById('nextBtn').innerHTML = "";
@@ -297,13 +290,6 @@ btn.innerText = "I got something else special for you… ❤️";
 btn.onclick = () => {
 document.getElementById('quiz').classList.add('hidden');
 document.getElementById('message').classList.remove('hidden');
-
-// 🔥 THIS IS THE FIX
-window.scrollTo({
-  top: document.body.scrollHeight,
-  behavior: 'smooth'
-});
-
 };
 setTimeout(() => {
 document.getElementById('nextBtn').innerHTML = "";
